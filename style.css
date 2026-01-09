@@ -1,0 +1,33 @@
+
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* header */
+.header {
+    margin-bottom: 20px;
+    border: 2px solid #1479a8;
+    border-radius: 5px;
+}
+
+.logo {
+    height: 60px;
+    display: flex;
+    padding: 10px;
+
+}
+ 
+/* Layout */
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+
