@@ -29,5 +29,28 @@
     gap: 30px;
 }
 
+/* Sidebar */
+.sidebar {
+    width: 220px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar button {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1479a8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #084879;
+}
+
 
 
