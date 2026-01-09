@@ -17,6 +17,15 @@
              </a>
 
         </div>
+
+         <!-- Sidebar -->
+        <div class="sidebar">
+            <button>Profile</button>
+            <button>Inbox</button>
+            <!-- <a href=https://www.aiub.edu/academic-calendar> -->
+            <button>Academic Calendar</button>
+            <!-- </a> -->
+        </div>
         
        
     </div>
