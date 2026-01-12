@@ -1,10 +1,49 @@
+<?php
+session_start();
+require_once "../Model/faculty_model.php";
+$_SESSION['faculty_id']= "23-50929-1";
+
+if (!isset($_SESSION['faculty_id'])) {
+    die("Login required");
+}
+
+if (isset($_SESSION["status"])) {
+    echo "<script>alert('Profile updated successfully!');</script>";
+    
+}
+unset($_SESSION["status"]);
+
+$faculty = getFacultyById($_SESSION['faculty_id']);
+?>
+
+
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Profile</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-</body>
+        <div class="profile_container">
+            <h2>Faculty Profile</h2>
+
+            <form method="POST" action="../Controller/profile_controller.php">
+                Name: <input type="text" name="name" value="<?= $faculty['name'] ?>"><br>
+                Email: <input type="email" name="email" value="<?= $faculty['email'] ?>"><br>
+                Department: <input type="text" name="department" value="<?= $faculty['department'] ?>"><br>
+                Phone: <input type="text" name="phone" value="<?= $faculty['phone'] ?>"><br>
+                Role: <input type="text" name="role" value="<?= $faculty['role'] ?>" disabled><br>
+                Password: <input type="text" name="password" value="<?= $faculty['password'] ?>"><br>
+                Faculty ID:<input type="text" value="<?= $faculty['faculty_id'] ?>" disabled>
+                <br><br>
+                <button type="submit">Update</button>
+            </form>
+
+            <a href="dashboard.php" class="back-btn">Back to Dashboard</a>
+
+        </div>
+
+    </body>
 </html>

@@ -3,13 +3,13 @@
   $user_name="root";
   $host_name="localhost";
   $password="";
-  $db_name="database_conn";
+  $db_name="webtech";
 
   $conn="";
 
   try{
     $conn= mysqli_connect( $host_name, $user_name ,$password , $db_name);
-    echo "connected!";
+    // echo "connected!";
   }
 
   catch(mysqli_connection_exception){

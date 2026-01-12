@@ -95,6 +95,11 @@
     color: white;
     font-weight: 600;
 }
-
-
+/* profile container */
+.profile_container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
 
