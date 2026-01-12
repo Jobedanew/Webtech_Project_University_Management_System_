@@ -21,10 +21,9 @@
          <!-- Sidebar -->
         <div class="sidebar">
             <button id="profile">Profile</button>
-            <button>Inbox</button>
-            <!-- <a href=https://www.aiub.edu/academic-calendar> -->
-            <button>Academic Calendar</button>
-            <!-- </a> -->
+            <button id="inbox">Inbox</button>
+            <button id="calendar">Academic Calendar</button>
+
         </div>
 
         <!-- Routine -->
@@ -91,6 +90,7 @@
     </div>
 </div>
 
+<!-- javascript -->
 
 <script src="dashboard.js"></script>
 
