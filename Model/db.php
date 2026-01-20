@@ -8,9 +8,14 @@ function getConnection(){
     return $conn;
 }
 
-function usernameExists($username){
+function usernameExists($username, $password, $role){
     $conn = getConnection();
-    $sql = "SELECT * FROM users WHERE username='$username'";
+    if($role == 'Faculty'){
+        $sql = "SELECT * FROM faculty WHERE name='$username' AND password='$password' AND role='$role'";
+        $result = mysqli_query($conn, $sql);
+        return mysqli_num_rows($result) > 0;
+    }
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' AND role='$role'";
     $result = mysqli_query($conn, $sql);
     return mysqli_num_rows($result) > 0;
 }

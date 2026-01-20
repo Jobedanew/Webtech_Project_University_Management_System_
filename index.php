@@ -1,11 +1,4 @@
-<?php
-session_start();
-if(isset($_POST['login'])){
-    $_SESSION['role'] = $_POST['role'];
-    $_SESSION['user'] = $_POST['username'];
-    header("Location: dashboard.php");
-}
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +10,7 @@ if(isset($_POST['login'])){
 <div class="box">
 <h2>AIUB University Management System</h2>
 
-<form method="post">
+<form method="post" action="../Controller/LoginController.php">
 <select name="role" required>
 <option value="">Select User</option>
 <option>Student</option>
@@ -25,7 +18,7 @@ if(isset($_POST['login'])){
 </select>
 
 <input type="text" name="username" placeholder="Username" required>
-<input type="password" placeholder="Password" required>
+<input type="password" name="password"placeholder="Password" required>
 
 <button name="login">Login</button>
 </form>
