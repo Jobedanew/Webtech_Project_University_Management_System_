@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Inbox</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="faculty_style.css">
 </head>
 <body>
     

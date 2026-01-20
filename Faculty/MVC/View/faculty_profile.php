@@ -22,14 +22,14 @@ $faculty = getFacultyById($_SESSION['faculty_id']);
 <html>
     <head>
         <title>Profile</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="faculty_style.css">
     </head>
     <body>
 
         <div class="profile_container">
             <h2>Faculty Profile</h2>
 
-            <form method="POST" action="../Controller/profile_controller.php">
+            <form method="POST" action="../Controller/faculty_profile_controller.php">
                 Name: <input type="text" name="name" value="<?= $faculty['name'] ?>"><br>
                 Email: <input type="email" name="email" value="<?= $faculty['email'] ?>"><br>
                 Department: <input type="text" name="department" value="<?= $faculty['department'] ?>"><br>
@@ -41,7 +41,7 @@ $faculty = getFacultyById($_SESSION['faculty_id']);
                 <button type="submit">Update</button>
             </form>
 
-            <a href="dashboard.php" class="back-btn">Back to Dashboard</a>
+            <a href="faculty_dashboard.php" class="back-btn">Back to Dashboard</a>
 
         </div>
 
