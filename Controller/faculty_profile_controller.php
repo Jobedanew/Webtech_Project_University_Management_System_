@@ -2,20 +2,34 @@
 session_start();
 require_once "../Model/faculty_model.php";
 
-if (!isset($_SESSION['faculty_id'])) {
+if (!isset($_SESSION['faculty_id']) || $_SESSION['role'] !== 'Faculty') {
     die("Unauthorized access");
 }
 
-$faculty_id = $_SESSION['faculty_id'];
+$faculty_id   = $_SESSION['faculty_id'];
+$faculty_role = $_SESSION['role'];
+
+$faculty = getFacultyById($faculty_id);  // fetch the faculty row
+
+if (!$faculty) {
+    die("Faculty not found");
+}
+
+$department = $faculty['department'];    
+
+
+
+
+
 
 /* Collect data */
 $data = [
     'faculty_id' => $faculty_id, // LOCKED
     'name'       => trim($_POST['name']),
     'email'      => trim($_POST['email']),
-    'department' => trim($_POST['department']),
+    'department' => $department,
     'phone'      => trim($_POST['phone']),
-    'role'       => trim($_POST['role']),
+    'role'       => $faculty_role, // LOCKED
     'password'   => $_POST['password']
 ];
 

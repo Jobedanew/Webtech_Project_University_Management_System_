@@ -1,19 +1,16 @@
 <?php
-session_start();
-require_once "../Model/faculty_model.php";
-$_SESSION['faculty_id']= "23-50929-1";
+   session_start();
+    require_once "../Model/faculty_model.php";
 
-if (!isset($_SESSION['faculty_id'])) {
-    die("Login required");
-}
+    if (!isset($_SESSION['faculty_id']) || $_SESSION['role'] !== 'Faculty') {
+        die("Unauthorized access");
+    }
 
-if (isset($_SESSION["status"])) {
-    echo "<script>alert('Profile updated successfully!');</script>";
-    
-}
-unset($_SESSION["status"]);
+    $faculty = getFacultyById($_SESSION['faculty_id']);
 
-$faculty = getFacultyById($_SESSION['faculty_id']);
+    if (!$faculty) {
+        die("Faculty not found");  // prevents warnings in view
+    }
 ?>
 
 
@@ -32,7 +29,7 @@ $faculty = getFacultyById($_SESSION['faculty_id']);
             <form method="POST" action="../Controller/faculty_profile_controller.php">
                 Name: <input type="text" name="name" value="<?= $faculty['name'] ?>"><br>
                 Email: <input type="email" name="email" value="<?= $faculty['email'] ?>"><br>
-                Department: <input type="text" name="department" value="<?= $faculty['department'] ?>"><br>
+                Department: <input type="text" name="department" value="<?= $faculty['department'] ?>"disabled><br>
                 Phone: <input type="text" name="phone" value="<?= $faculty['phone'] ?>"><br>
                 Role: <input type="text" name="role" value="<?= $faculty['role'] ?>" disabled><br>
                 Password: <input type="text" name="password" value="<?= $faculty['password'] ?>"><br>

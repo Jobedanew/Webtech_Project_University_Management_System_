@@ -11,16 +11,17 @@ if(isset($_POST['login'])){
 
     if(usernameExists($username, $password, $role)){
     // In a real application, you would verify the password here
- 
-    $_SESSION['username'] = $username;
+
     
     if ($role == "Faculty") {
         $_SESSION['role'] = "Faculty";
+        $_SESSION['faculty_id'] = $username;
         header("Location: ../Views/faculty_dashboard.php");
         exit();
 
     } else {
         $_SESSION['role'] = "Student";
+        $_SESSION['username'] = $username;
         header("Location: ../Views/dashboard.php");
         exit();
     }
