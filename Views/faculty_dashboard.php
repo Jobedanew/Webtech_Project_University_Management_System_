@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="faculty_style.css">
 </head>
 <body>
 
@@ -92,7 +92,7 @@
 
 <!-- javascript -->
 
-<script src="dashboard.js"></script>
+<script src="faculty_dashboard.js"></script>
 
 
 </body>

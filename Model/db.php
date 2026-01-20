@@ -15,9 +15,15 @@ function usernameExists($username, $password, $role){
         $result = mysqli_query($conn, $sql);
         return mysqli_num_rows($result) > 0;
     }
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' AND role='$role'";
-    $result = mysqli_query($conn, $sql);
-    return mysqli_num_rows($result) > 0;
+    else if ($role == 'Student') {
+        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' AND role='$role'";
+        $result = mysqli_query($conn, $sql);
+        return mysqli_num_rows($result) > 0;
+    }
+    else {
+        return false;
+    }
+ 
 }
 
 function registerUser($name, $username, $password, $role){

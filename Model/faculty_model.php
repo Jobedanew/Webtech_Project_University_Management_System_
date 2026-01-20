@@ -1,10 +1,10 @@
 <?php
-include "../Model/db_connection.php";
+require_once('db.php');
 
 
 /* Fetch faculty by ID */
 function getFacultyById($id) {
-    global $conn;
+    $conn = getConnection();
     $sql = "SELECT * FROM faculty WHERE faculty_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $id);
@@ -14,7 +14,7 @@ function getFacultyById($id) {
 
 /* Update faculty profile (ID never changes) */
 function updateFaculty($data) {
-    global $conn;
+    $conn = getConnection();
 
     $sql = "UPDATE faculty SET 
             name = ?, 

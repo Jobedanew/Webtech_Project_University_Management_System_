@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../Model/db.php');
+require_once('../Model/faculty_model.php');
 
 if(isset($_POST['login'])){
 
@@ -15,17 +16,21 @@ if(isset($_POST['login'])){
     
     if ($role == "Faculty") {
         $_SESSION['role'] = "Faculty";
-        header("Location: faculty_dashboard.php");
+        header("Location: ../Views/faculty_dashboard.php");
+        exit();
 
     } else {
         $_SESSION['role'] = "Student";
-    }
-    header("Location: dashboard.php");
-
-    }
-    else {
-        header("Location: index.php?error=invalid");
+        header("Location: ../Views/dashboard.php");
         exit();
     }
+    
+    }
+
+    else {
+    $_SESSION['error'] = "Invalid username or password";
+    header("Location: ../Views/index.php");
+    exit();
+}
 
 }
