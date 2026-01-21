@@ -11,6 +11,9 @@
     if (!$faculty) {
         die("Faculty not found");  // prevents warnings in view
     }
+    if(isset($_SESSION['status']) && $_SESSION['status'] == "success"){
+        $flag=1;
+    }
 ?>
 
 
@@ -37,6 +40,13 @@
                 <br><br>
                 <button type="submit">Update</button>
             </form>
+
+            <?php
+                if(isset($flag) && $flag==1){
+                    echo "<p style='color:green;'>Profile updated successfully</p>";
+                    unset($_SESSION['status']);
+                }
+            ?>
 
             <a href="faculty_dashboard.php" class="back-btn">Back to Dashboard</a>
 
