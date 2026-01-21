@@ -9,16 +9,41 @@
 }
 
 /* header */
+/* .header {
+    margin-bottom: 20px;
+    border: 2px solid #1479a8;
+    border-radius: 5px;
+} */
+
 .header {
     margin-bottom: 20px;
     border: 2px solid #1479a8;
     border-radius: 5px;
+
+    display: flex;                 /* THIS IS THE KEY */
+    justify-content: space-between;/* logo left, logout right */
+    align-items: center;           /* same line */
+    padding: 10px 20px;
 }
 
+
+.logout-link {
+
+    color:  #1479a8;
+    font-weight: bold;
+    font-size: 16px;
+    
+}
+.logout-link:hover{
+
+    color:  #a8142d;        
+
+    
+}
 .logo {
     height: 60px;
     display: flex;
-    padding: 10px;
+    padding: 5px;
 
 }
  

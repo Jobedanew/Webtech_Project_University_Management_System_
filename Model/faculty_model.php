@@ -4,7 +4,9 @@ require_once('db.php');
 
 /* Fetch faculty by ID */
 function getFacultyById($faculty_id) {
+
     $conn = getConnection();
+    
     $faculty_id = mysqli_real_escape_string($conn, $faculty_id); 
     $sql = "SELECT * FROM faculty WHERE faculty_id = '$faculty_id'"; 
     $result = mysqli_query($conn, $sql);
@@ -38,7 +40,13 @@ function updateFaculty($data) {
             password = $password
             WHERE faculty_id = $faculty_id";
 
+
     $result = mysqli_query($conn, $sql);
-    return $result;
+
+    if (!$result) {
+        die("Database update failed: " . mysqli_error($conn));
+    }
+
+    return mysqli_affected_rows($conn) > 0;
 }
 ?>

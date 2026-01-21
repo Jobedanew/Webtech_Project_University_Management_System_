@@ -16,7 +16,23 @@
                <img src="aiub_logo.png" class="logo" alt="AIUB Logo">
              </a>
 
+             <div class="log-welcome">
+            
+               <p style="color: #1479a8; font-weight: bold;">Welcome to Faculty Dashboard!</p>
+
+            </div>
+
+            <div class="log-out">
+            
+               <a href="logout.php" class="logout-link">Logout</a>
+
+            </div>
+
+   
+
         </div>
+
+
 
          <!-- Sidebar -->
         <div class="sidebar">
