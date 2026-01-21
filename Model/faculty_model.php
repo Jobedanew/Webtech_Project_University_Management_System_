@@ -6,7 +6,7 @@ require_once('db.php');
 function getFacultyById($faculty_id) {
 
     $conn = getConnection();
-    
+
     $faculty_id = mysqli_real_escape_string($conn, $faculty_id); 
     $sql = "SELECT * FROM faculty WHERE faculty_id = '$faculty_id'"; 
     $result = mysqli_query($conn, $sql);
@@ -29,24 +29,24 @@ function updateFaculty($data) {
     $department = mysqli_real_escape_string($conn, $data['department']);
     $phone      = mysqli_real_escape_string($conn, $data['phone']);
     $role       = mysqli_real_escape_string($conn, $data['role']);
-    $password   = mysqli_real_escape_string($conn, $data['password']);
+    $password   = password_hash($data['password'], PASSWORD_DEFAULT);
 
     $sql = "UPDATE faculty SET 
-            name = $name, 
-            email = $email, 
-            department = $department, 
-            phone = $phone, 
-            role = $role, 
-            password = $password
-            WHERE faculty_id = $faculty_id";
-
+            name = '$name',
+            email = '$email',
+            department = '$department',
+            phone = '$phone',
+            role = '$role',
+            password = '$password'
+            WHERE faculty_id = '$faculty_id'";
 
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {
-        die("Database update failed: " . mysqli_error($conn));
+        return false; // real failure
     }
 
-    return mysqli_affected_rows($conn) > 0;
+    return true; // SUCCESS even if no row changed
 }
+
 ?>

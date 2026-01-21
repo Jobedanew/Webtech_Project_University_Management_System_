@@ -18,10 +18,6 @@ if (!$faculty) {
 $department = $faculty['department'];    
 
 
-
-
-
-
 /* Collect data */
 $data = [
     'faculty_id' => $faculty_id, // LOCKED
@@ -50,7 +46,7 @@ if (isset($_POST['faculty_id']) && $_POST['faculty_id'] !== $faculty_id) {
 /* Call model */
 if (updateFaculty($data)) {
     $_SESSION['status'] = "success";
-    header("Location: ../View/faculty_profile.php");
+    header("Location: ../Views/faculty_profile.php");
     exit();
 } else {
     echo "Profile update failed";
