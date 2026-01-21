@@ -133,10 +133,9 @@ body {
     border-radius: 10px;
     text-align: center;
     
-    /* NEW CODE ADDS THE GAP */
-    display: flex;           /* Enables flexbox layout */
-    flex-direction: column;  /* Stacks content vertically */
-    gap: 15px;               /* Adds 15px space between every item */
+
+    display: flex;          
+    flex-direction: column; 
 }
 
 

@@ -9,7 +9,7 @@
     $faculty = getFacultyById($_SESSION['faculty_id']);
 
     if (!$faculty) {
-        die("Faculty not found");  // prevents warnings in view
+        die("Faculty not found");  
     }
     if(isset($_SESSION['status']) && $_SESSION['status'] == "success"){
         $flag=1;

@@ -15,11 +15,10 @@ function getFacultyById($faculty_id) {
         die("Database query failed: " . mysqli_error($conn));
     }
 
-    return mysqli_fetch_assoc($result); // returns full row
+    return mysqli_fetch_assoc($result); 
 }
 
 
-/* Update faculty profile (ID never changes) */
 function updateFaculty($data) {
     $conn = getConnection();
 
@@ -43,10 +42,10 @@ function updateFaculty($data) {
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {
-        return false; // real failure
+        return false; 
     }
 
-    return true; // SUCCESS even if no row changed
+    return true; 
 }
 
 ?>

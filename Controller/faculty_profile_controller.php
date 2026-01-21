@@ -9,7 +9,7 @@ if (!isset($_SESSION['faculty_id']) || $_SESSION['role'] !== 'Faculty') {
 $faculty_id   = $_SESSION['faculty_id'];
 $faculty_role = $_SESSION['role'];
 
-$faculty = getFacultyById($faculty_id);  // fetch the faculty row
+$faculty = getFacultyById($faculty_id); 
 
 if (!$faculty) {
     die("Faculty not found");
@@ -18,7 +18,6 @@ if (!$faculty) {
 $department = $faculty['department'];    
 
 
-/* Collect data */
 $data = [
     'faculty_id' => $faculty_id, // LOCKED
     'name'       => trim($_POST['name']),
@@ -38,12 +37,12 @@ if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
     die("Invalid email format");
 }
 
-/* Prevent ID tampering */
+
 if (isset($_POST['faculty_id']) && $_POST['faculty_id'] !== $faculty_id) {
     die("Faculty ID cannot be changed");
 }
 
-/* Call model */
+
 if (updateFaculty($data)) {
     $_SESSION['status'] = "success";
     header("Location: ../Views/faculty_profile.php");
