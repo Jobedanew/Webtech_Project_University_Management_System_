@@ -44,7 +44,7 @@ function registerUser($name, $username, $password, $role){
         return "duplicate";
     }
 
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    //$password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO users (name, username, password, role)
             VALUES ('$name', '$username', '$password', '$role')";

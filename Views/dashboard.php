@@ -6,7 +6,7 @@ if(!isset($_SESSION['username'])) header("Location: .../Views/index.php");
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../Views/style.css">
 <title>Dashboard</title>
 </head>
 <body>
@@ -16,7 +16,7 @@ if(!isset($_SESSION['username'])) header("Location: .../Views/index.php");
 <?php if($_SESSION['role']=="Student"){ ?>
 
 <h2>Student Dashboard</h2>
-<p>Welcome, <?php echo $_SESSION['user']; ?></p>
+<p>Welcome, <?php echo $_SESSION['username']; ?></p>
 
 <ul>
     <li><a href="view-course&marks.php">View Courses & Marks</a></li>

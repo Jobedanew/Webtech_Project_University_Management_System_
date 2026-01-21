@@ -117,22 +117,28 @@
 }
 
 
-body{
+body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #c9cad8; /* optional */
+    background: #c9cad8;
 }
 
-.profile_container{
+.profile_container {
     background: #8a86d7;
     width: 350px;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
+    
+    /* NEW CODE ADDS THE GAP */
+    display: flex;           /* Enables flexbox layout */
+    flex-direction: column;  /* Stacks content vertically */
+    gap: 15px;               /* Adds 15px space between every item */
 }
+
 
 
 
