@@ -9,8 +9,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
     $role     = $_POST['role'];
 
-    if(usernameExists($username, $password, $role)){
-    // In a real application, you would verify the password here
+    if(credentialCheck($username, $password, $role)){
 
     
     if ($role == "Faculty") {

@@ -9,20 +9,15 @@
 }
 
 /* header */
-/* .header {
-    margin-bottom: 20px;
-    border: 2px solid #1479a8;
-    border-radius: 5px;
-} */
 
 .header {
     margin-bottom: 20px;
     border: 2px solid #1479a8;
     border-radius: 5px;
 
-    display: flex;                 /* THIS IS THE KEY */
-    justify-content: space-between;/* logo left, logout right */
-    align-items: center;           /* same line */
+    display: flex;                 
+    justify-content: space-between;
+    align-items: center;           
     padding: 10px 20px;
 }
 

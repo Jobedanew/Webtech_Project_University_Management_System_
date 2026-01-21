@@ -23,7 +23,7 @@
     }
     ?>
 
-    <form method="post" action="../Controller/RegisterController.php">
+    <form method="post" action="../Controller/registerController.php">
 
         <input type="text" name="name" placeholder="Name" required>
 

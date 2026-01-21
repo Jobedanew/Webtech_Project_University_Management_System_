@@ -8,7 +8,7 @@ function getConnection(){
     return $conn;
 }
 
-function usernameExists($username, $password, $role){
+function credentialCheck($username, $password, $role){
     $conn = getConnection();
     if($role == 'Faculty'){
         $sql = "SELECT * FROM faculty WHERE faculty_id ='$username' AND password='$password' AND role='$role'";
@@ -25,6 +25,16 @@ function usernameExists($username, $password, $role){
     }
  
 }
+
+function usernameExists($username){
+    $conn = getConnection();
+
+    $sql = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($conn, $sql);
+
+    return mysqli_num_rows($result) > 0;
+}
+
 
 function registerUser($name, $username, $password, $role){
     $conn = getConnection();
