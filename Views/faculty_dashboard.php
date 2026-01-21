@@ -18,7 +18,7 @@
 
              <div class="log-welcome">
             
-               <p style="color: #1479a8; font-weight: bold;">Welcome to Faculty Dashboard!</p>
+               <p style="color: #7d78e3; font-weight: bold;">Welcome to Faculty Dashboard!</p>
 
             </div>
 

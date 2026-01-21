@@ -10,21 +10,22 @@ function getConnection(){
 
 function credentialCheck($username, $password, $role){
     $conn = getConnection();
-    if($role == 'Faculty'){
-        $sql = "SELECT * FROM faculty WHERE faculty_id ='$username' AND password='$password' AND role='$role'";
-        $result = mysqli_query($conn, $sql);
-        return mysqli_num_rows($result) > 0;
+
+    if ($role == 'Faculty') {
+        $sql = "SELECT * FROM faculty WHERE faculty_id='$username' AND password='$password'";
+    } else {
+        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     }
-    else if ($role == 'Student') {
-        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' AND role='$role'";
-        $result = mysqli_query($conn, $sql);
-        return mysqli_num_rows($result) > 0;
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row; // login successful
     }
-    else {
-        return false;
-    }
- 
+
+    return false; // login failed
 }
+
 
 function usernameExists($username){
     $conn = getConnection();

@@ -1,6 +1,6 @@
 body{
 font-family:Arial;
-background:#9eaecf;
+background:#c9cad8;;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -8,7 +8,7 @@ height:100vh;
 }
 
 .box{
-background:#a5a3d3;
+background:#7d78e3;
 padding:30px;
 width:350px;
 border-radius:10px;
@@ -28,7 +28,7 @@ margin-top:10px;
 }
 
 button{
-background:#c4c4d1;
+background:#7d78e3;
 color:rgb(225, 234, 232);
 border:none;
 }

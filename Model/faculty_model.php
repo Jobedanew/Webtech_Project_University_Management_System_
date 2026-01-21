@@ -29,7 +29,7 @@ function updateFaculty($data) {
     $department = mysqli_real_escape_string($conn, $data['department']);
     $phone      = mysqli_real_escape_string($conn, $data['phone']);
     $role       = mysqli_real_escape_string($conn, $data['role']);
-    $password   = password_hash($data['password'], PASSWORD_DEFAULT);
+    $password   = mysqli_real_escape_string($conn, $data['password']);
 
     $sql = "UPDATE faculty SET 
             name = '$name',
